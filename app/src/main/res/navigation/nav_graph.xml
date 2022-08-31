@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signinFragment">
+
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.nutrient.SigninFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signinFragment_to_signupFragment"
+            app:destination="@id/signupFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signinFragment_to_userEntryListFragment"
+            app:destination="@id/userEntryListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.nutrient.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup">
+        <action
+            android:id="@+id/action_signupFragment_to_signinFragment"
+            app:destination="@id/signinFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_signupFragment_to_userEntryListFragment"
+            app:destination="@id/userEntryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleEntryFragment"
+        android:name="com.example.nutrient.SingleFoodFragment"
+        android:label="fragment_single_entry"
+        tools:layout="@layout/fragment_single_food" >
+        <action
+            android:id="@+id/action_singleEntryFragment_to_entryListFragment"
+            app:destination="@id/entryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryListFragment"
+        android:name="com.example.nutrient.FoodFragment"
+        android:label="fragment_entry_list"
+        tools:layout="@layout/fragment_food_list" >
+        <action
+            android:id="@+id/action_entryListFragment_to_singleEntryFragment"
+            app:destination="@id/singleEntryFragment" />
+        <action
+            android:id="@+id/action_entryListFragment_to_userEntryListFragment"
+            app:destination="@id/userEntryListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userEntryListFragment"
+        android:name="com.example.nutrient.UserFoodListFragment"
+        android:label="fragment_user_entry_list"
+        tools:layout="@layout/fragment_user_food_list" >
+        <action
+            android:id="@+id/action_userEntryListFragment_to_entryListFragment"
+            app:destination="@id/entryListFragment" />
+        <action
+            android:id="@+id/action_userEntryListFragment_to_signinFragment"
+            app:destination="@id/signinFragment" />
+    </fragment>
+
+
+</navigation>
